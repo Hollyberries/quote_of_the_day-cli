@@ -1,6 +1,10 @@
-require "quote_of_the_day/version"
+ require 'net/http'
+ require 'open-uri'
+ require 'json'
+ require 'nokogiri'
+ require 'pry'
+ 
 
-module QuoteOfTheDay
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./version"
+require_relative './cli'
+require_relative './quotes'
