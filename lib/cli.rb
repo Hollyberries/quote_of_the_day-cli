@@ -9,25 +9,27 @@ class QuoteOfTheDay::CLI
   
   def list_quotes
     puts "Today's Quote Of The Day:"
-    @quotes = QuotesOfTheDay::Dog.today
-    @quotes.each.with_index(1) do |quote, num|
-      puts "#{num}. #{quote.happy} - #{quote.funny} - #{quote.sad}"
+    puts <<-OPTIONS
+      1. Happy Quote of the Day
+      2. Funny Quote of the Day
+      3. Sad Quote of the Day
+     OPTIONS
     end
-  end
   
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number of the quote you would like more info on or type list to see the quotes again or type exit:"
+      puts "Enter the number for the kind of quote you would like to read or type list to see the options again or type exit:"
       input = gets.strip.downcase
-      if input.to_i > 0
-        the_quote = @quotes[input.to_i-1]
-        puts "#{the_quote.happy} - #{the_quote.funny} - #{the_quote.sad"
-      elsif
-       input == "list"
-        list_quotes
-        else
-          puts "Not sure what quote you want to see."
+      case input
+        when "1"
+          puts "Happy quote of the day"
+        when "2"
+          puts "Funny quote of the day"
+        when "3"
+          puts "Sad quote of the day"
+        when "list"
+          list_quotes
       end
     end
   end

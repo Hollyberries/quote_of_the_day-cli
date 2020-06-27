@@ -1,4 +1,4 @@
-class QuoteOfTheDay::Quotes
+class QuoteOfTheDay::Quote
   
   attr_accessor :happy, :funny, :sad, :url
   
