@@ -1,6 +1,6 @@
 class QuoteOfTheDay::Quote
   
-  attr_accessor :title, :url
+  attr_accessor :title
   
   def self.today
     self.scrape_quotes
@@ -15,25 +15,31 @@ class QuoteOfTheDay::Quote
     quotes << self.scrape_funny
     quotes << self.scrape_sad
     
-     quotes
+    quotes
   end
   
   def self.scrape_happy
     doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/happy/"))
-    title = doc.search("h1").text
+    
+    quote = self.new
+    quote.title = doc.search("h1").text
+    quote
   end
   
-  #def self.scrape_funny
-    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny"))
-    #title = doc.search("h1").text
-    #url = "http://quotes-day.com"
-  #end
+  def self.scrape_funny
+    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
+    
+    quote = self.new
+    quote.title = doc.search("h1").text
+    quote
+  end
   
-  #def self.scrape_sad
-    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
-    #title = doc.search("h1").text
-    #url = "http://quotes-day.com"
-    #binding.pry
-  #end
+  def self.scrape_sad
+    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
+    
+    quote = self.new
+    quote.title = doc.search("h1").text
+    quote
+  end
 
 end

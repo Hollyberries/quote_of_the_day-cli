@@ -10,8 +10,8 @@ class QuoteOfTheDay::CLI
   def list_quotes
     puts "Today's Quote Of The Day:"
     @quotes = QuoteOfTheDay::Quote.today
-    @quotes.each.with_index(1) do |quote, i|
-      puts "#{i}. #{quote.title}"
+    @quotes.each.with_index(1) do |quote, num|
+      puts "#{num}. #{quote.title}"
     end
   end
   
@@ -22,7 +22,7 @@ class QuoteOfTheDay::CLI
       input = gets.strip.downcase
       if input.to_i > 0
         the_quote = @quotes[input.to_i-1]
-        puts "#{i}. #{the_quote.title}"
+        puts "#{num}. #{the_quote.title}"
       elsif input == "list"
         list_quotes
       else 
