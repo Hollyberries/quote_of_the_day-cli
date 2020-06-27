@@ -1,6 +1,6 @@
 class QuoteOfTheDay::Quote
   
-  attr_accessor :title
+  attr_accessor :title, :words
   
   def self.today
     self.scrape_quotes
@@ -23,23 +23,27 @@ class QuoteOfTheDay::Quote
     
     quote = self.new
     quote.title = doc.search("h1").text
+    quote.words = doc.search().text
+    binding.pry
     quote
   end
   
-  def self.scrape_funny
-    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
+  #def self.scrape_funny
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
     
-    quote = self.new
-    quote.title = doc.search("h1").text
-    quote
-  end
+    #quote = self.new
+    #quote.title = doc.search("h1").text
+    #quote.words = doc.search().text
+    #quote
+  #end
   
-  def self.scrape_sad
-    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
+  #def self.scrape_sad
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
     
-    quote = self.new
-    quote.title = doc.search("h1").text
-    quote
-  end
+    #quote = self.new
+    #quote.title = doc.search("h1").text
+    #quote.words = doc.search().text
+    #quote
+  #end
 
 end
