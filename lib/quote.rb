@@ -19,22 +19,21 @@ class QuoteOfTheDay::Quote
   end
   
   def self.scrape_happy
-    doc = Nokogiri::HTML(open("http://www.quotes-day.com/quotes/happy/"))
-    binding.pry
-    html_text = page.read
-    
+    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/happy/"))
+    title = doc.search("h1").text
   end
   
   #def self.scrape_funny
-    #doc = Nokogiri::HTML(open("http://www.quotes-day.com/quotes/funny/"))
-    #html_text = page.read
-    
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny"))
+    #title = doc.search("h1").text
+    #url = "http://quotes-day.com"
   #end
   
   #def self.scrape_sad
-    #doc = Nokogiri::HTML(open("http://www.quotes-day.com/quotes/sad/"))
-    #html_text = page.read
-    
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
+    #title = doc.search("h1").text
+    #url = "http://quotes-day.com"
+    #binding.pry
   #end
 
 end
