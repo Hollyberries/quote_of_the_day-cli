@@ -10,6 +10,9 @@ class QuoteOfTheDay::CLI
   def list_quotes
     puts "Today's Quote Of The Day:"
     @quotes = QuoteOfTheDay::Quote.today
+    @quotes.each.with_index(1) do |quote, i|
+      puts "#{i}. #{quote.mood}"
+    end
   end
   
   def menu
@@ -18,7 +21,8 @@ class QuoteOfTheDay::CLI
       puts "Enter the number for the kind of quote you would like to read or type list to see the options again or type exit:"
       input = gets.strip.downcase
       if input.to_i > 0
-        puts @quotes[input.to_i-1]
+        the_quote = @quotes[input.to_i-1]
+        puts "#{i}. #{the_quote.mood}"
       elsif input == "list"
         list_quotes
       else 
