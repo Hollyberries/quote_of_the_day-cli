@@ -10,3 +10,7 @@ require_relative "./version"
 require_relative './cli'
 require_relative './quotes'
 require_relative './api_manager'
+
+
+response = APIManager.get_quotes
+binding.pry
