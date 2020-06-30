@@ -1,31 +1,33 @@
-class QuoteOfTheDay::Quotes
+class Quotes
   
-  attr_accessor :title
+  @@all = []
+  
+  def self.all
+    @@all
+  end
+  
+  def self.create_from_api(array_of_hashes)
+    array_of_hashes.each do |hash|
+      self.create(hash)
+  end
+  
+  def self.create(categories, url)
+    q = self.new
+    q.save
+    q
+  end
+  
+  def self.format_hash(hash)
+    hash.each_with_object({}) do |{k, v}, memo|
+      memo[k.to_sym] = v
+  end
   
   
-    #def self.get_happy_quote
+  attr_accessor :categories, :url
   
-    #end
-  
-  
-   #def self.get_funny_quote
-    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
-    
-    #quote = self.new
-    #quote.title = doc.search("h1").text
-    #quote.words = doc.search().text
-    #quote
-   #end
-  
-  
-    #def self.get_sad_quote
-    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad/"))
-    
-    #quote = self.new
-    #quote.title = doc.search("h1").text
-    #quote.words = doc.search().text
-    #quote
-   #end
-  
+  def initialize
+    @categories = categories
+    @url = url
+  end
 
 end

@@ -12,5 +12,5 @@ require_relative './quotes'
 require_relative './api_manager'
 
 
-response = APIManager.get_quotes
+response = APIManager.get_quote_categories
 binding.pry
