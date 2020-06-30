@@ -1,8 +1,6 @@
 class QuoteOfTheDay::Quote
   
-  attr_accessor :title, :words
-  
-  response = APIManager.get_happy
+   response = APIManager.get_happy
 
   def self.get_quotes
     
@@ -16,12 +14,7 @@ class QuoteOfTheDay::Quote
   end
   
   def self.get_happy
-    doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/happy/"))
     
-    quote = self.new
-    quote.title = doc.search("h1").text
-    quote.words = doc.search().text
-    binding.pry
     quote
   end
   

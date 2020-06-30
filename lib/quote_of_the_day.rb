@@ -8,4 +8,5 @@
 
 require_relative "./version"
 require_relative './cli'
-require_relative './quote'
+require_relative './quotes'
+require_relative './api_manager'
