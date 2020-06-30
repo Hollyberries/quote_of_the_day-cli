@@ -1,39 +1,41 @@
-class QuoteOfTheDay::Quote
+class QuoteOfTheDay::Quotes
   
-   response = APIManager.get_happy
-
-  def self.get_quotes
-    
-    quotes = []
-    
-    quotes << self.get_happy
-    quotes << self.get_funny
-    quotes << self.get_sad
-    
-    quotes
+  attr_accessor: :title
+  
+  
+   
+  def get_quotes
+    binding.pry
   end
   
-  def self.get_happy
-    
-    quote
-  end
-  
-  #def self.get_funny
+    #def self.get_happy
     #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
     
     #quote = self.new
     #quote.title = doc.search("h1").text
     #quote.words = doc.search().text
     #quote
-  #end
+   #end
   
-  #def self.get_sad
-    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
+  
+   #def self.get_funny
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
     
     #quote = self.new
     #quote.title = doc.search("h1").text
     #quote.words = doc.search().text
     #quote
-  #end
+   #end
+  
+  
+    #def self.get_sad
+    #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad/"))
+    
+    #quote = self.new
+    #quote.title = doc.search("h1").text
+    #quote.words = doc.search().text
+    #quote
+   #end
+  
 
 end

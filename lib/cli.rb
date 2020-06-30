@@ -9,7 +9,7 @@ class QuoteOfTheDay::CLI
   
   def list_quotes
     puts "Today's Quote Of The Day:"
-    @quotes = QuoteOfTheDay::Quote.today
+    @quotes = QuoteOfTheDay::Quotes.today
     @quotes.each.with_index(1) do |quote, num|
       puts "#{num}. #{quote.title} - #{quote.words}"
     end

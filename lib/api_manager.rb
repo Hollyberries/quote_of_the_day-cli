@@ -1,4 +1,4 @@
-class APIManager
+class APIManager::Quotes
   
   BASE_URL = "http://www.quotes-day.com/"
   
@@ -7,6 +7,5 @@ class APIManager
     response = HTTParty.get(url)
     response
   end
-  
-  
+
 end
