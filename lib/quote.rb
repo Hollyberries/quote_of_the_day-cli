@@ -2,23 +2,20 @@ class QuoteOfTheDay::Quote
   
   attr_accessor :title, :words
   
-  def self.today
-    self.scrape_quotes
-  end
-  
-  
-  def self.scrape_quotes
+  response = APIManager.get_happy
+
+  def self.get_quotes
     
     quotes = []
     
-    quotes << self.scrape_happy
-    quotes << self.scrape_funny
-    quotes << self.scrape_sad
+    quotes << self.get_happy
+    quotes << self.get_funny
+    quotes << self.get_sad
     
     quotes
   end
   
-  def self.scrape_happy
+  def self.get_happy
     doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/happy/"))
     
     quote = self.new
@@ -28,7 +25,7 @@ class QuoteOfTheDay::Quote
     quote
   end
   
-  #def self.scrape_funny
+  #def self.get_funny
     #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/funny/"))
     
     #quote = self.new
@@ -37,7 +34,7 @@ class QuoteOfTheDay::Quote
     #quote
   #end
   
-  #def self.scrape_sad
+  #def self.get_sad
     #doc = Nokogiri::HTML(open("http://quotes-day.com/quotes/sad"))
     
     #quote = self.new

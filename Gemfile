@@ -9,3 +9,5 @@ gem "rake", "~> 12.3.3"
 gem "pry", "~> 0.13.1"
 
 gem "nokogiri", "~> 1.10"
+
+gem "httparty", "~> 0.18.1"
