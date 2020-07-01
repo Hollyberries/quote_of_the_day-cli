@@ -1,9 +1,7 @@
 class APIManager
   
-  BASE_URL = "https://theysaidso.com"
-  
    def self.get_quote_categories
-    url = BASE_URL + "http://quotes.rest/qod/categories.json"
+    url = "http://quotes.rest/qod/categories.json"
     response = HTTParty.get(url)
     response
   end
