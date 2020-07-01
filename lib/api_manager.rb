@@ -1,12 +1,19 @@
 class APIManager
   
-  BASE_URL = "https://quotes.rest/qod/categories?language=en&detailed=false"
-  
+ 
    def self.get_quote_categories
-    url = BASE_URL + "https://quotes.rest/qod?language=en"
-    response = HTTParty.get(url)
-    response
-  end
+      url = "http://quotes.rest/qod/categories.json"
+      response = HTTParty.get(url)
+      quote_category_list = response["categories"]
+   end
 
+
+  #def self.get_quote_of_the_day
+    
+  #end
+  
 end
 
+
+
+#QOD url only = "http://quotes.rest/qod.json"

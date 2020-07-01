@@ -2,11 +2,10 @@ class Quotes
   
   @@all = []
   
-  attr_accessor :categories, :inspire, :management, :sports, :life, :funny, :love, :art, :students, :data_url
+  attr_accessor :inspire, :management, :sports, :life, :funny, :love, :art, :students, :data_url
   
   
   def initialize
-    @categories = categories
     @inspire = inspire
     @management = management
     @sports = sports
