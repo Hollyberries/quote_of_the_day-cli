@@ -7,12 +7,21 @@ class QuoteOfTheDay::Quotes
    self.scrape_quotes
  end
  
- def scrape_quotes
+ def self.scrape_quotes
    quotes = []
+   
+   quotes << self.scrape_site
    
    quotes
  end
   
+ def self.scrape_site
+   doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/inspire#"))
+   binding.pry
+   name = 
+   text = 
+   url = 
+ end
 
 
  
