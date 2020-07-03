@@ -18,11 +18,12 @@ class QuoteOfTheDay::CLI
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number for the kind of quote you would like to read or type list to see the options again or type exit:"
+      puts "Please choose a number for the kind of quote you would like to read or type list to see the options again or type exit:"
       input = gets.strip.downcase
+      
       if input.to_i > 0
         the_quote = @quotes[input.to_i-1]
-        puts "#{num}. #{the_quote.name} - #{the_quote.text}"
+        puts "#{the_quote.name} - #{the_quote.text}"
       elsif input == "list"
         list_quotes
       else 
@@ -32,6 +33,6 @@ class QuoteOfTheDay::CLI
   end
   
   def goodbye
-    puts "Come back soon for more quotes to read!"
+    puts "Come back tomorrow for more quotes to read!"
   end
 end
