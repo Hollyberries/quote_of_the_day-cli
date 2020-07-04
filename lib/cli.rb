@@ -23,7 +23,7 @@ class QuoteOfTheDay::CLI
       
       if input.to_i > 0
         the_quote = @quotes[input.to_i-1]
-        puts "#{the_quote.title} - #{the_quote.content} - #{the_quote.author}"
+        puts "#{the_quote.content}"
       elsif input == "list"
         list_quotes
       else 
