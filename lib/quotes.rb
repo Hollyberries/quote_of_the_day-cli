@@ -28,7 +28,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/inspire#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/inspire#".strip
    
    quote
  end
@@ -39,7 +39,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/management#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/management#".strip
    
    quote
  end
@@ -50,7 +50,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/sports#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/sports#".strip
    
    quote
  end
@@ -62,7 +62,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/life#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/life#".strip
    
    quote
  end
@@ -74,7 +74,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/funny#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/funny#".strip
    
    quote
  end
@@ -85,7 +85,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/love#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/love#".strip
    
    quote
  end
@@ -96,7 +96,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/art#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/art#".strip
    
    quote
  end
@@ -107,7 +107,7 @@ class QuoteOfTheDay::Quotes
    quote = self.new
    quote.title = doc.search("h1").text.strip
    quote.content = doc.search("div.qcontent").text.strip
-   quote.url = "https://theysaidso.com/quote-of-the-day/students#"
+   quote.url = "https://theysaidso.com/quote-of-the-day/students#".strip
    
    quote
  end

@@ -33,6 +33,6 @@ class QuoteOfTheDay::CLI
   end
   
   def goodbye
-    puts "Come back tomorrow for more quotes to read!"
+    puts "This list gets updated daily so be sure to come back tomorrow for new quotes!"
   end
 end
