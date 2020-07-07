@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-Use this when you want to access some great quotes by famous artists, actors, poets and opinion leaders.
+Choose a corresponding number to the displayed quote of the day options.  It will return the chosen quote along with the author.
 
 ## Development
 
