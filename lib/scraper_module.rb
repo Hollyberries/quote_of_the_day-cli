@@ -1,4 +1,4 @@
-class QuoteOfTheDay::Scraper
+class QuoteOfTheDay::ScraperModule
   
   
   def self.scrape_first_quote
