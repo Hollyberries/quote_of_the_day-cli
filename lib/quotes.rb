@@ -25,9 +25,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_first_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/inspire#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "").gsub("\t", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "").gsub("\t", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -36,18 +36,19 @@ class QuoteOfTheDay::Quotes
   def self.scrape_second_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/management#")
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "").gsub("\t, "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "").gsub("\t", "")
-    quote
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
+    
+   quote
   end
  
   def self.scrape_third_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/sports#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -56,9 +57,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_fourth_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/life#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -67,9 +68,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_fifth_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/funny#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -77,9 +78,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_sixth_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/love#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -87,9 +88,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_seventh_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/art#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
@@ -97,9 +98,9 @@ class QuoteOfTheDay::Quotes
   def self.scrape_eighth_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/students#"))
    
-   quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote = self.new
+   quote.title = doc.search("h1").text
+   quote.content = doc.search("div.qcontent").text
    
    quote
   end
