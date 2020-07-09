@@ -34,7 +34,7 @@ class QuoteOfTheDay::Quotes
   
 
   def self.scrape_second_quote
-   doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/management#")
+   doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/management#"))
    
    quote = self.new
    quote.title = doc.search("h1").text
