@@ -1,32 +1,31 @@
 class QuoteOfTheDay::Scraper
   
-  
   def today
-   scrape_quotes
+    scrape_quotes
   end
   
- 
   def scrape_quotes
-   quotes = []
-   
-   quotes << self.scrape_first_quote
-   quotes << self.scrape_second_quote
-   quotes << self.scrape_third_quote
-   quotes << self.scrape_fourth_quote
-   quotes << self.scrape_fifth_quote
-   quotes << self.scrape_sixth_quote
-   quotes << self.scrape_seventh_quote
-   quotes << self.scrape_eighth_quote
+    quotes = []
+  
+   quotes << scrape_first_quote
+   quotes << scrape_second_quote
+   quotes << scrape_third_quote
+   quotes << scrape_fourth_quote
+   quotes << scrape_fifth_quote
+   quotes << scrape_sixth_quote
+   quotes << scrape_seventh_quote
+   quotes << scrape_eighth_quote
    
    quotes
   end
+ 
   
   def scrape_first_quote
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/inspire#"))
    
    quote = QuoteOfTheDay::Quotes.new
-   quote.title = doc.search("h1").text.gsub("\n", "")
-   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
+   quote.title = doc.search("h1").text.gsub("\n", "").gsub("\t", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "").gsub("\t", "")
    
    quote.save
   end

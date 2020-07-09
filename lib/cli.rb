@@ -1,7 +1,8 @@
 class QuoteOfTheDay::CLI
   
  
-  def call 
+  def call
+    QuoteOfTheDay::Scraper.new.scrape_quotes
     list_quotes
     menu
     goodbye
