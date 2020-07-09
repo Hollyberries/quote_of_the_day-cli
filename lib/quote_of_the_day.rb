@@ -8,3 +8,4 @@
 require_relative "./version"
 require_relative './cli'
 require_relative './quotes'
+require_relative './scraper'
