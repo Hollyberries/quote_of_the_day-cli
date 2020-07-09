@@ -2,7 +2,6 @@ class QuoteOfTheDay::CLI
   
  
   def call
-    QuoteOfTheDay::Scraper.new.scrape_quotes
     list_quotes
     menu
     goodbye
@@ -12,7 +11,7 @@ class QuoteOfTheDay::CLI
     puts "Welcome to your Quote Of The Day:"
     @quotes = QuoteOfTheDay::Quotes.today
     @quotes.each.with_index(1) do |quote, num|
-      puts "#{num}. #{quote.title}"
+    puts "#{num}. #{quote.title}"
     end
   end
   
