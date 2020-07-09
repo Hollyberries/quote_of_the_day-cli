@@ -26,8 +26,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/inspire#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
  end
 
@@ -35,8 +35,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/management#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
  end
  
@@ -44,8 +44,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/sports#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
  end
 
@@ -54,8 +54,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/life#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
  end
  
@@ -64,8 +64,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/funny#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
   end
  
@@ -73,8 +73,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/love#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
   end
  
@@ -82,8 +82,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/art#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
  end
  
@@ -91,8 +91,8 @@ class QuoteOfTheDay::Quotes
    doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/students#"))
    
    quote = self.new
-   quote.title = doc.search("h1").text.strip
-   quote.content = doc.search("div.qcontent").text.strip
+   quote.title = doc.search("h1").text.gsub("\n", "")
+   quote.content = doc.search("div.qcontent").text.gsub("\n", "")
    quote
   end
  
