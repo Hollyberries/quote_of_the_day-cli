@@ -17,11 +17,11 @@ class QuoteOfTheDay::CLI
   
   def menu
     input = nil
-    while input != "exit"
+    until input == "exit"
       puts "Please choose a number for the kind of quote you would like to read or type list to see the options again or type exit:"
       input = gets.strip.downcase
       
-      if input.to_i > 0
+      if input.to_i > 0 && input.to_i < 9
         the_quote = @quotes[input.to_i-1]
         puts "#{the_quote.content}"
       elsif input == "list"
