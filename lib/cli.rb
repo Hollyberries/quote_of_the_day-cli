@@ -9,8 +9,8 @@ class QuoteOfTheDay::CLI
   
   def list_quotes
     puts "Welcome to your Quote Of The Day:"
-    @@all = QuoteOfTheDay::QuoteScraper.today
-    @@all.each.with_index(1) do |quote, num|
+    @quote = QuoteOfTheDay::Scraper.today
+    @quote.each.with_index(1) do |quote, num|
     puts "#{num}. #{quote.title}"
     end
   end

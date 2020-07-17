@@ -6,6 +6,6 @@
  
 
 require_relative "./version"
-require_relative './daily_quotes'
-require_relative './quote_scraper'
+require_relative './quote'
+require_relative './scraper'
 require_relative './cli'

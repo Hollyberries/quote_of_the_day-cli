@@ -1,7 +1,26 @@
 
-class QuoteOfTheDay::DailyQuotes
+class QuoteOfTheDay::Quote
   
-  attr_accessor :title, :content
+  attr_accessor :title, :content, :url
+  
+  @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
+  @@all = []
+  
+  
+  def initialize(url)
+    @title = title
+    @content = content
+    @url = url
+  end
+  
+  
+  def self.all
+    @@all
+  end
+  
+  
+  
+end
   
     #@@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"] 
     
@@ -36,5 +55,3 @@ class QuoteOfTheDay::DailyQuotes
       #quote.title == title
     #end
   #end
-  
-end
