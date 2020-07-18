@@ -1,10 +1,12 @@
 class QuoteOfTheDay::Scraper
   
-  
   @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
   @@all = []
 
 
+   def self.today
+    self.scrape_quotes
+   end
    
    def self.scrape_quotes
     @@categories.map do |category|

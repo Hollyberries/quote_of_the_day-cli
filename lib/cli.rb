@@ -9,7 +9,7 @@
   
   def list_quotes
     puts "Welcome to your Quote Of The Day:"
-    @quotes = QuoteOfTheDay::Quote.today
+    @quotes = QuoteOfTheDay::Scraper.today
     @quotes.each.with_index(1) do |quote, num|
     puts "#{num}. #{quote.title}"
     end
