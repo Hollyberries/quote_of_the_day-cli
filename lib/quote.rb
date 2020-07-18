@@ -4,7 +4,7 @@ class QuoteOfTheDay::Quote
   attr_accessor :title, :content
   
   
-  @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
+  #@@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
   @@all = []
   
   
@@ -15,18 +15,7 @@ class QuoteOfTheDay::Quote
   def self.all
     @@all
   end
-  
-  #def initialize
-  # @title = title
-  # @content = content
-  # @url = url
-  #end
-  
-  
-  #def self.all
-    #@@all
-  #end
-  
+
 end
   
     #@@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"] 

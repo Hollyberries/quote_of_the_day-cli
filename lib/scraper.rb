@@ -3,23 +3,20 @@ class QuoteOfTheDay::Scraper
   attr_accessor :quote
   
   
-  #@@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
+  @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
 
-  
-    def get_page
-      doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/"))
+
+    def self.today
+      scrape_quote
     end
     
-    def get_quotes
-      self.get_page
-    end
-    
-    
+
    def scrape_quotes
-   @@categories.map do |category|
-    @@all << self.scrape_quote(category)
+    @@categories.map do |category|
+    @@all << scrape_quote(category)
     end
    end
+   
  
    def scrape_quote(url) 
      Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/" + url))
@@ -32,8 +29,4 @@ class QuoteOfTheDay::Scraper
    end
      
  
-   def self.today
-      scrape_quote
-   end
-   
 end
