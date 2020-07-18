@@ -14,10 +14,13 @@ class QuoteOfTheDay::Quote
   def self.all
     @@all
   end
+  
+  def self.today
+    self.scrape_quotes
+  end
 
 end
   
-
 
 
   

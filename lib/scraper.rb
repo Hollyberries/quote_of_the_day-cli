@@ -1,20 +1,14 @@
 class QuoteOfTheDay::Scraper
   
-  attr_accessor :quote
-  
   
   @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
   @@all = []
 
 
-    def self.today
-      self.scrape_quotes
-    end
-    
-
+   
    def self.scrape_quotes
     @@categories.map do |category|
-    @@all << scrape_quote(category)
+    @@all << self.scrape_quote(category)
     end
    end
    
@@ -25,9 +19,7 @@ class QuoteOfTheDay::Scraper
      quote = self.new
      quote.title = doc.search("h1").text
      quote.content = doc.search("div.qcontent").text
-     
      quote
    end
-     
  
 end
