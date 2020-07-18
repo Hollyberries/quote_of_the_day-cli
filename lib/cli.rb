@@ -9,8 +9,8 @@
   
   def list_quotes
     puts "Welcome to your Quote Of The Day:"
-    @quote = QuoteOfTheDay::Quote.all
-    @quote.each.with_index(1) do |quote, num|
+    @quotes = QuoteOfTheDay::Scraper.today
+    @quotes.each.with_index(1) do |quote, num|
     puts "#{num}. #{quote.title}"
     end
   end
@@ -22,7 +22,7 @@
       input = gets.strip.downcase
       
       if input.to_i > 0 && input.to_i < 9
-        the_quote = @quote[input.to_i-1].
+        the_quote = @quotes[input.to_i-1].
         puts "#{the_quote.content}"
       elsif input == "list"
         list_quotes
