@@ -4,24 +4,25 @@ class QuoteOfTheDay::Scraper
   
   
   @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
+  @@all = []
 
 
     def self.today
-      scrape_quote
+      self.scrape_quotes
     end
     
 
-   def scrape_quotes
+   def self.scrape_quotes
     @@categories.map do |category|
     @@all << scrape_quote(category)
     end
    end
    
  
-   def scrape_quote(url) 
-     Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/" + url))
+   def self.scrape_quote(url) 
+     doc = Nokogiri::HTML(open("https://theysaidso.com/quote-of-the-day/" + url))
      
-     quote = Quote.new
+     quote = self.new
      quote.title = doc.search("h1").text
      quote.content = doc.search("div.qcontent").text
      
