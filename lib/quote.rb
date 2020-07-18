@@ -1,24 +1,31 @@
 
 class QuoteOfTheDay::Quote
   
-  attr_accessor :title, :content, :url
+  attr_accessor :title, :content
+  
   
   @@categories = ["inspire", "management", "sports", "life", "funny", "love", "art", "students"]
   @@all = []
   
   
-  def initialize(url)
-    @title = title
-    @content = content
-    @url = url
+  def initialize
+    @@all << self
   end
-  
   
   def self.all
     @@all
   end
   
+  #def initialize
+  # @title = title
+  # @content = content
+  # @url = url
+  #end
   
+  
+  #def self.all
+    #@@all
+  #end
   
 end
   
