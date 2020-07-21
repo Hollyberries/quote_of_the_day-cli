@@ -1,16 +1,21 @@
  class QuoteOfTheDay::CLI
-  
+   
+   attr_reader :quotes
  
   def call
+    welcome
     list_quotes
     menu
     goodbye
   end
   
-  def list_quotes
+  def welcome
     puts "Welcome to your Quote Of The Day:"
     @quotes = QuoteOfTheDay::Scraper.today
-    @quotes.each.with_index(1) do |quote, num|
+  end
+  
+  def list_quotes
+    quotes.each.with_index(1) do |quote, num|
     puts "#{num}. #{quote.title}"
     end
   end
@@ -22,7 +27,7 @@
       input = gets.strip.downcase
       
       if input.to_i > 0 && input.to_i < 9
-        the_quote = @quotes[input.to_i-1].
+        the_quote = quotes[input.to_i-1]
         puts "#{the_quote.content}"
       elsif input == "list"
         list_quotes
